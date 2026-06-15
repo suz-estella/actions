@@ -12,11 +12,13 @@ runs:
   using: 'composite'
   steps:
 
-    - uses: PredictiveEcology/actions/install-spatial-deps@v0.2
+    #- uses: PredictiveEcology/actions/install-spatial-deps@v0.2
 
     - name: Install extra Linux dependencies
       if: runner.os == 'Linux'
       run: |
+        sudo apt-get update -y
+        sudo apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev libsqlite3-dev
         sudo apt -y install libfontconfig1-dev libmagick++-6.q16-dev
       shell: bash
 

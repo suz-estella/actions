@@ -12,7 +12,7 @@ runs:
   using: 'composite'
   steps:
 
-    #- uses: PredictiveEcology/actions/install-spatial-deps@v0.2
+    - uses: PredictiveEcology/actions/install-spatial-deps@main
 
     - name: Install extra Linux dependencies
       if: runner.os == 'Linux'
@@ -33,11 +33,11 @@ runs:
         packages: |
           any::testthat
 
-    - uses: PredictiveEcology/actions/install-Require@v0.2
+    - uses: PredictiveEcology/actions/install-Require@main
       with:
         GitTag: 'development'
 
-    - uses: PredictiveEcology/actions/install-SpaDES@v0.2
+    - uses: PredictiveEcology/actions/install-SpaDES@main
 
     - name: Install SpaDES.project
       run: |

@@ -139,8 +139,10 @@ jobs:
     ## called workflow without `secrets: inherit`.
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GOOGLE_AUTH: ${{ secrets.GOOGLE_AUTH }}
       MODULE: ${{ inputs.module }}
       MODULE_DIR: ${{ inputs.module-dir }}
+      BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
 
     steps:
       - uses: actions/checkout@v7

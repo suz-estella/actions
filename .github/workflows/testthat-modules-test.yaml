@@ -184,7 +184,7 @@ jobs:
       ## Same retry wrapper install-spatial-deps uses: a composite-action step cannot
       ## use `timeout-minutes`, so a stalled mirror otherwise burns the 6h job ceiling.
       - name: Install other system dependencies
-        if: runner.os == 'Linux' || runner.os == 'macOS'
+        if: runner.os == 'Linux'
         shell: bash
         env:
           DEBIAN_FRONTEND: noninteractive
